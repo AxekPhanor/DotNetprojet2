@@ -24,17 +24,11 @@ namespace P2FixAnAppDotNetCode.Models
             return cartList;
         }
 
-        private void SetCartLineList(List<CartLine> cartList)
-        {
-            this.cartList = cartList;
-        }
-
         /// <summary>
         /// Adds a product in the cart or increment its quantity in the cart if already added
         /// </summary>//
         public void AddItem(Product product, int quantity)
         {
-            // TODO implement the method
             var line = cartList.Exists(l => l.Product.Id == product.Id);
             if (line)
             {
@@ -63,7 +57,6 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public double GetTotalValue()
         {
-            // TODO implement the method
             double total = 0;
             foreach(var line in GetCartLineList())
             {
@@ -77,7 +70,6 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public double GetAverageValue()
         {
-            // TODO implement the method
             double total = 0;
             int nbProductsInCart = 0;
             foreach (var line in GetCartLineList())
@@ -93,7 +85,6 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public Product FindProductInCartLines(int productId)
         {
-            // TODO implement the method
             var line = cartList.First(l => l.Product.Id == productId);
             return line.Product;
         }
