@@ -29,11 +29,13 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>//
         public void AddItem(Product product, int quantity)
         {
-            var line = cartList.Exists(l => l.Product.Id == product.Id);
-            if (line)
+            var line = cartList.FirstOrDefault(l => l.Product.Id == product.Id);
+            if (line != null)
             {
-                var cart = cartList.First(l => l.Product.Id == product.Id);
-                cart.Quantity += quantity;
+                if (product.Stock > 0 && line.Quantity < product.Stock)
+                {
+                    line.Quantity += quantity;
+                }
             }
             else
             {

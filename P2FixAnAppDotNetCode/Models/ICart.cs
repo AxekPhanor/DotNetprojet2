@@ -1,5 +1,4 @@
-﻿
-namespace P2FixAnAppDotNetCode.Models
+﻿namespace P2FixAnAppDotNetCode.Models
 {
     public interface ICart
     {
