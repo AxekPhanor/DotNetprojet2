@@ -30,14 +30,7 @@ namespace P2FixAnAppDotNetCode.Models
         public void AddItem(Product product, int quantity)
         {
             var line = cartList.FirstOrDefault(l => l.Product.Id == product.Id);
-            if (line != null)
-            {
-                if (product.Stock > 0 && line.Quantity < product.Stock)
-                {
-                    line.Quantity += quantity;
-                }
-            }
-            else
+            if (line == null)
             {
                 cartList.Add(new CartLine()
                 {
@@ -46,7 +39,12 @@ namespace P2FixAnAppDotNetCode.Models
                     Product = product
                 });
             }
+            else if(product.Stock > 0 && line.Quantity < product.Stock)
+            {
+                line.Quantity += quantity;
+            }
         }
+
 
         /// <summary>
         /// Removes a product form the cart
