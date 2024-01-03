@@ -1,5 +1,5 @@
 # DotNetprojet2
-> Openclassroom
+> OpenClassrooms
 > Projet 2 : Déboguez une application .NET
 
 
