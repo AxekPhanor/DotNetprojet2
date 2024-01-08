@@ -60,7 +60,7 @@ namespace P2FixAnAppDotNetCode.Models
             double total = 0;
             foreach(var line in GetCartLineList())
             {
-                total += + line.Quantity * line.Product.Price;
+                total += line.Quantity * line.Product.Price;
             }
             return total;
         }
@@ -74,7 +74,7 @@ namespace P2FixAnAppDotNetCode.Models
             int nbProductsInCart = 0;
             foreach (var line in GetCartLineList())
             {
-                total += +line.Quantity * line.Product.Price;
+                total += line.Quantity * line.Product.Price;
                 nbProductsInCart += line.Quantity;
             }
             return total / nbProductsInCart;

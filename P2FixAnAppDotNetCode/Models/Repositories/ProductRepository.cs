@@ -53,7 +53,7 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
                 _products.Remove(product);
         }
 
-        Product IProductRepository.GetProductById(int productId)
+        public Product GetProductById(int productId)
         {
             Product product = _products.First(p => p.Id == productId);
             return product;
