@@ -5,7 +5,7 @@
 
 ## Installation et Usage
 
-pour installer le projet :
+pour cloner le projet :
 ```
 git clone -b dev --single-branch https://github.com/AxekPhanor/DotNetprojet2.git
 ```
